@@ -2,49 +2,53 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Voting System</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="top-bar">
-  Designed by Neha Salunkhe
+  Secure Voting Portal | Online Election System
 </div>
 
-<div id="loginBox">
-  <h2>🔐 Login</h2>
-  <input type="text" id="username" placeholder="Enter Username">
-  <input type="password" id="password" placeholder="Enter Password">
+<!-- LOGIN -->
+<div id="loginBox" class="card-box">
+  <h2>🔐 Voter Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
   <button onclick="login()">Login</button>
+  <p id="loginError" class="error"></p>
 </div>
 
+<!-- VOTING -->
 <div id="votingBox" style="display:none;">
-  <h1>🗳️ Online Voting System</h1>
+  <h1>🗳️ Cast Your Vote</h1>
 
   <div class="card-container">
     <div class="card" onclick="selectCandidate('A', event)">
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Rahul_Gandhi.png">
-      <h3>Rahulgandhi</h3>
+      <h3>Rahul Gandhi</h3>
     </div>
 
     <div class="card" onclick="selectCandidate('B', event)">
-      <img src="https://vui.unsplash.com/resize?height=256&quality=60&type=auto&url=https%3A%2F%2Fsearched-images.s3.us-west-2.amazonaws.com%2F88916541-11f5-4d1a-80f9-e5a2fe47fac5%3FX-Amz-Algorithm%3DAWS4-HMAC-SHA256%26X-Amz-Credential%3DAKIAQ4GRIA4QTG2PSHUB%252F20260324%252Fus-west-2%252Fs3%252Faws4_request%26X-Amz-Date%3D20260324T054311Z%26X-Amz-Expires%3D86400%26X-Amz-SignedHeaders%3Dhost%26X-Amz-Signature%3D236c4c7b95cb7ea11094a7db97677aef4c930295f28e8c9dc1b05c04e51d9545&sign=veGMpmd89prrmBe6tln2rRcRvvZGh5FnHiPOpfSrI1Q">
-      <h3>Neha Salunkhe</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Narendra_Modi_2023.jpg">
+      <h3>Narendra Modi</h3>
     </div>
 
     <div class="card" onclick="selectCandidate('C', event)">
-      <img src="https://www.pmindia.gov.in/wp-content/uploads/2025/12/02.jpg">
-      <h3>Narendra Modi</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Arvind_Kejriwal_2020.jpg">
+      <h3>Arvind Kejriwal</h3>
     </div>
   </div>
 
   <button onclick="submitVote()">Submit Vote</button>
 
   <div class="result" id="resultBox" style="display:none;">
-    <h3>Results</h3>
-    <p>A: <span id="voteA">0</span></p>
-    <p>B: <span id="voteB">0</span></p>
-    <p>C: <span id="voteC">0</span></p>
+    <h3>Live Results</h3>
+    <p>Rahul Gandhi: <span id="voteA">0</span></p>
+    <p>Narendra Modi: <span id="voteB">0</span></p>
+    <p>Arvind Kejriwal: <span id="voteC">0</span></p>
   </div>
 </div>
 
